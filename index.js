@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
-// const userRoute = require("./routes/songs");
+ const songsRoute = require("./routes/music");
 
 // settings
 const app = express();
@@ -9,7 +9,7 @@ const port = process.env.PORT || 3030;
 
 // middlewares
 app.use(express.json());
-// app.use("/", songsRoute);
+ app.use("/", songsRoute);
 
 // routes
 app.get("/", (req, res) => {
