@@ -9,7 +9,7 @@ const port = process.env.PORT || 3030;
 
 // middlewares
 app.use(express.json());
-app.use("/", songsRoute);
+// app.use("/", songsRoute);
 
 // routes
 app.get("/", (req, res) => {
@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
 });
 
 // mongodb connection
+mongoose.set('strictQuery', true);
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => console.log("Connected to MongoDB Atlas"))
