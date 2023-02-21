@@ -17,7 +17,9 @@ const songsSchema = mongoose.Schema({
 
   imgurl:{
   type: String,
-  required: true
+  required: false
 }
 
-})
+});
+
+module.exports = mongoose.model("songs", songsSchema)
