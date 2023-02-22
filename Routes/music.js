@@ -42,4 +42,14 @@ router.put("/songs/:id", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });
 
+// delete a songs
+
+router.delete("/songs/:id", (req, res) => {
+  const { id} = req.params;
+  songsSchema
+    .remove({_id: id})
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
+
 module.exports = router
