@@ -23,7 +23,7 @@ router.get("/songs", (req, res) => {
 
 // get a songs
 
-router.get("/songs/:id", (req, res) => {
+router.get("/:id", (req, res) => {
   const {id} = req.params;
   songsSchema
     .findById(id)
